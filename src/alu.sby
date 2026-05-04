@@ -1,0 +1,15 @@
+[options]
+mode bmc
+depth 10
+
+[engines]
+smtbmc
+
+[script]
+read_verilog -sv alu.sv
+read_verilog -sv tb_alu_formal.sv
+prep -top tb_alu_formal
+
+[files]
+alu.sv
+tb_alu_formal.sv
